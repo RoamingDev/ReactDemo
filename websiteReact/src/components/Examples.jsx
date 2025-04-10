@@ -31,7 +31,6 @@ export default function Examples(){
     return (
         <Section title="Examples" id="examples">
           <Tabs 
-            ButtonsContainer="menu" //Para built in elements (menu, ul, etc) directamente uso string y no { }
             buttons={
               <>
                 <TabButton isSelected={selectedTopic === 'components'} onClick={() => handleSelect('components')}>Components</TabButton>
