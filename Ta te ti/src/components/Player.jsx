@@ -1,11 +1,16 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol, isActive }) {
+export default function Player({ initialName, symbol, isActive, onChangeName }) {
     const [playerName, setPlayerName] = useState(initialName);
     const [isEditing, setIsEditing] = useState(false);
 
     function handleEditing(){
         setIsEditing((editing) => !editing); 
+
+        if(isEditing){ //Si isEditing es true, significa que recien clickeamos el boton para terminar de editar
+            onChangeName(symbol, playerName); //Esta funcion se ejecuta si EMPEZAMOS a editar el nombre (por eso el if)
+        }
+        
     }
 
     function handleChange(event){
