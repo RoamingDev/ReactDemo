@@ -6,7 +6,6 @@ export default function Player({ initialName, symbol, isActive, onChangeName }) 
 
     function handleEditing(){
         setIsEditing((editing) => !editing); 
-
         if(isEditing){ //Si isEditing es true, significa que recien clickeamos el boton para terminar de editar
             onChangeName(symbol, playerName); //Esta funcion se ejecuta si EMPEZAMOS a editar el nombre (por eso el if)
         }
