@@ -1,10 +1,54 @@
-export default function Values() {
-    return (
-        <div id="user-input">
-            <input type="number" placeholder="Investment Amount" className="input-group" />
-            <input type="number" placeholder="Anual Investment" className="input-group" />
-            <input type="number" placeholder="Expected Return" className="input-group" />
-            <input type="number" placeholder="Duration" className="input-group" />
-        </div>
-    )
+export default function Values({ onChange, userInput }) {
+  return (
+    <section id="user-input">
+      <div className="input-group">
+        <p>
+          <label>Initial Investment</label>
+          <input
+            type="number"
+            required
+            value={userInput.initialInvestment}
+            onChange={(event) =>
+              onChange("initialInvestment", event.target.value)
+            }
+          />
+        </p>
+        <p>
+          <label>Anual Investment</label>
+          <input
+            type="number"
+            required
+            value={userInput.annualInvestment}
+            onChange={(event) =>
+              onChange("annualInvestment", event.target.value)
+            }
+          />
+        </p>
+      </div>
+      <div className="input-group">
+        <p>
+          <label>Expected Return</label>
+          <input
+            type="number"
+            required
+            value={userInput.expectedReturn}
+            onChange={(event) =>
+              onChange("expectedReturn", event.target.value)
+            }
+          />
+        </p>
+        <p>
+          <label>Duration</label>
+          <input
+            type="number"
+            required
+            value={userInput.duration}
+            onChange={(event) =>
+              onChange("duration", event.target.value)
+            }
+          />
+        </p>
+      </div>
+    </section>
+  );
 }
